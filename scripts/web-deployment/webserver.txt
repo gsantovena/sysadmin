@@ -1,0 +1,21 @@
+cpweb-a01-* 
+- Persistent routes
+- Feature: Message Queuing
+- Role: Web Server (IIS)
+	- Common HTTP Features (Defaults)
+	- Application Development (Defaults)
+	- Health and Diagnostics
+		- HTTP Logging
+		- Logging Tools
+		- Request Monitor
+	- Performance (Defaults)
+
+ASP.NET MVC 3 (VS 2010)
+IIS 7 Recommended Configuration
+Web Deployment Tool 2.1
+URL Rewrite 2.0
+Advanced Logging
+.NET Framework 3.5 SP 1
+IIS: Logging Tools
+IIS: Management Service
+ASP.NET MVC 3 Tools Update Lenguage Packs Installer

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enyim.com>
+	<log factory="Enyim.Caching.Log4NetFactory, Enyim.Caching.Log4NetAdapter" />
+	<memcached protocol="Binary">
+		<servers>
+			<add address="mc-a01.haf2.vm.local" port="11211" />
+		</servers>
+		<keyTransformer type="Enyim.Caching.Memcached.TigerHashKeyTransformer, Enyim.Caching"/>
+		<socketPool minPoolSize="30" maxPoolSize="300" connectionTimeout="00:00:05" deadTimeout="00:00:10" />
+	</memcached>
+</enyim.com>

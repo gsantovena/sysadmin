@@ -1,0 +1,10 @@
+Deployment Process:
+
+$environment = stg1|haf1|haf2
+svn update
+generate-config-files.ps1 -e $environment
+deploy.ps1 -e $environment -a search -w a01,a02
+deploy.ps1 -e $environment -a searchapi -w a01,b01
+deploy.ps1 -e $environment -a search -w b01,b02
+deploy.ps1 -e $environment -a searchapi -w a02
+deploy.ps1 -e $environment -a search

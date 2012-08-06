@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ElasticSearch>
+	<Hosts>
+		<add ConnectionName="bw_sessions" Host="es.stg1.vm.local" Port="9200" DefaultIndex="bwsessions" RefreshAfterIndex="false"/>
+		<add ConnectionName="bw_enhancedclick" Host="es.stg1.vm.local" Port="9200" DefaultIndex="bwenhancedclick" RefreshAfterIndex="false"/>    
+	</Hosts>
+</ElasticSearch>

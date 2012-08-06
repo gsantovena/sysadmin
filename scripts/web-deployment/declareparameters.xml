@@ -1,0 +1,6 @@
+<parameters>
+  <!-- declare parameter for Http Binding -->
+  <parameter name="WebsitePort" description="Website Http Binding Port">
+    <parameterEntry kind="DestinationBinding" scope="search1" match=":9091:" />
+  </parameter>
+ </parameters>

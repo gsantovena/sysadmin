@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<configuration>  
+  <appSettings>
+    <add key="ElasticSearch" value="elasticSearch.xml" />    
+	<add key="connectionStrings" value="connectionStrings.xml" />    
+	<add key="enyim.com" value="memcached.xml" />    
+	<add key="Facade" value="facade.xml" />    
+	<add key="castle" value="serviceBus.xml" />    
+	<add key="log4net" value="logging.xml" />
+  </appSettings>
+</configuration>

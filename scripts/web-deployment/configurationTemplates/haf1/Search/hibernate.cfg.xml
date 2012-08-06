@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
+  <session-factory>
+    <property name="show_sql">false</property>
+    <property name="generate_statistics">false</property>
+    <property name="dialect">NHibernate.Dialect.MsSql2005Dialect</property>
+    <property name="connection.connection_string">Data Source=mssql.haf1.vm.local;Initial Catalog=appexnet_searcher;User Id=appexnet;Password=V4nt4G3M3d!4;pooling=true;Min Pool Size=5; Max Pool Size=200;</property>
+    <property name="proxyfactory.factory_class">NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle</property>
+    <property name="current_session_context_class">web</property>
+    <property name="adonet.batch_size">50</property>
+    <mapping assembly="BrokersWeb.Search.Data.Nhibernate"/>
+    <mapping assembly="Brokersweb.Affiliate.Service"/>
+    <mapping assembly="Brokersweb.Filtering.Data"/>	
+    <mapping assembly="BrokersWeb.Redirector"/>
+    <mapping assembly="BrokersWeb.App.AcquisitionPixelTracking"/>
+    <mapping assembly="BrokersWeb.SuperBid.Data.Nhibernate"/>
+    <mapping assembly="BrokersWeb.App.PpcAttributes"/>
+    <mapping assembly="BrokersWeb.Mortgage.Core"/>
+    <mapping assembly="App.ABTesting"/>
+    <mapping assembly="BrokersWeb.AdvertiserDiscountAdjustment.Data.Nhibernate"/>
+    <mapping assembly="BrokersWeb.App.Click.TrackingScripts"/>
+	<mapping assembly="BrokersWeb.EnhancedClick.Data"/>
+	<mapping assembly="BrokersWeb.Icp.Data"/>
+	<mapping assembly="BrokersWeb.ExtraFields.Data"/>
+	<mapping assembly="BrokersWeb.Search.ExclusionToolsRulesService"/>
+	<mapping assembly="BrokersWeb.AdSuppression.Data"/>
+  </session-factory>
+</hibernate-configuration>
