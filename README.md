@@ -1,4 +1,4 @@
 sysadmin
 ========
 
-Sysadmin scripts I have been programming or collecting for my tasks.
+Sysadmin scripts I have created or collected for my tasks.
