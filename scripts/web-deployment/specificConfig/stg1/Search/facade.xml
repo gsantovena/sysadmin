@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Facade 
-		DefaultClickDomain="searcher.stg1.vm.local" 
-		DefaultClickProtocol="http://" 
-		MainAffiliateId="10002" 
-		EnableClickRedirect="true"
-		XmlApiEnabledIp="192.168.10.193,192.168.10.146,192.168.10.182,192.168.10.194,192.168.10.147,192.168.10.101,174.143.77.193,174.143.77.194,98.129.78.101,174.143.92.150,192.168.10.150" 
-		/>
