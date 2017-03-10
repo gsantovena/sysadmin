@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 #
 # Program: SSL Certificate Check <ssl-cert-check>
 #
@@ -8,9 +8,15 @@
 #
 # Author: Matty < matty91 at gmail dot com >
 #
-# Current Version: 3.27
+# Current Version: 3.29
 #
 # Revision History:
+#
+# Version 3.29
+#  - Add the openssl -servername flag if it shows up in help.
+#
+# Version 3.28
+#  - Added  a DEBUG option to assist with debugging folks who use the script
 #
 # Version 3.27
 #  - Allow white spaces to exist in the certificate file list
@@ -160,7 +166,7 @@
 #  Version 1.0
 #      Initial Release
 #
-# Last Updated: 02-27-2013
+# Last Updated: 01-05-2016
 #
 # Purpose: 
 #  ssl-cert-check checks to see if a digital certificate in X.509 format
@@ -228,8 +234,8 @@ CERTTYPE="pem"
 # Protocol version to use (cmdline: -v)
 VERSION=""
 
-# Send along the servername when TLS is used
-TLSSERVERNAME="FALSE"
+# Enable debugging
+DEBUG=0
 
 # Location of system binaries
 AWK=$(which awk)
@@ -697,6 +703,14 @@ then
     exit 1
 fi
 
+# Send along the servername when TLS is used
+if ${OPENSSL} s_client -h 2>&1 | grep '-servername' > /dev/null
+then
+    TLSSERVERNAME="TRUE"
+else
+    TLSSERVERNAME="FALSE"
+fi
+
 # Place to stash temporary files
 CERT_TMP=$($MKTEMP  /var/tmp/cert.XXXXXX)
 ERROR_TMP=$($MKTEMP /var/tmp/error.XXXXXX)
@@ -752,6 +766,14 @@ else
 fi
 
 ### Remove the temporary files
+if [ $DEBUG == 1 ]
+then
+    echo "DEBUG: Certificate temporary file:"
+    cat ${CERT_TMP}
+    echo "DEBUG: Runtime information file:"
+    cat ${ERROR_TMP}
+fi
+
 rm -f ${CERT_TMP} ${ERROR_TMP}
 
 ### Exit with a success indicator
@@ -760,4 +782,3 @@ if [ "${NAGIOS}" = "TRUE" ]; then
 else
     exit 0
 fi
-
